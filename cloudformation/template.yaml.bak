@@ -53,8 +53,8 @@ Parameters:
     Default: 10.192.21.0/24
 
   ImageId:
-    Type: AWS::EC2::Image::Id
-    Default: 'ami-0f924dc71d44d23e2'
+    Type: 'AWS::SSM::Parameter::Value<AWS::EC2::Image::Id>'
+    Default: '/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2'
     Description: The Amazon EC2 Linux instance Amazon Machine Image (AMI), which designates the configuration of the new instance.
   InstanceType:
     Type: String
@@ -78,7 +78,6 @@ Parameters:
     Description: A thumbprint of an Open ID Connector is a SHA1 hash of the public certificate of the host
   GithubRepoName:
     Type: String 
-    Default: mengdiz97/aws-codedeploy-github-actions-deployment
     Description: GitHub repository name Ex-TestUser/TestCodeDeploy
 
 Resources:
